@@ -47,7 +47,7 @@ async function getLinks(){
   return links
  }
 
-const output = await getLinks()
+// const output = await getLinks()
 
 export const Component = function Resources(): JSX.Element {
   usePageEffect({ title: "Resources" });
@@ -66,7 +66,7 @@ export const Component = function Resources(): JSX.Element {
           gap: 2
         }}
       >
-      {output}
+      {/* {output} */}
       </Box>
     </Container>
   );

@@ -57,6 +57,7 @@ module.exports = {
   ignorePatterns: [
     "/.cache",
     "/.git",
+    "/.husky",
     "/.yarn",
     "/*/dist",
     "/app/queries",

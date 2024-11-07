@@ -34,7 +34,6 @@ export default defineProject(async ({ mode }) => {
     cacheDir: fileURLToPath(new URL("../.cache/vite-app", import.meta.url)),
 
     build: {
-      target: 'esnext',
       rollupOptions: {
         output: {
           manualChunks: {
