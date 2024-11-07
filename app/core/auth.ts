@@ -6,20 +6,19 @@ import {
   User,
   UserCredential,
   getAuth,
-  signInAnonymously,
   signInWithPopup,
 } from "firebase/auth";
 import { atom, useAtomValue } from "jotai";
 import { loadable } from "jotai/utils";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import loginForm from "../components/login";
 import { app, auth } from "./firebase";
 import { store } from "./store";
 
 export const currentUser = atom<Promise<User | null> | User | null>(
   new Promise<User | null>(() => {}),
 );
-
 currentUser.debugLabel = "currentUser";
 
 const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -49,9 +48,13 @@ export function useSignIn(
   const signIn = useCallback(() => {
     let p: Promise<UserCredential> | null = null;
 
-    if (signInMethod === "anonymous") {
+    if (signInMethod === "email") {
       const auth = getAuth(app);
-      p = signInAnonymously(auth);
+      return loginForm;
+      // const [email, setEmail] = useState("");
+      // const [password, setPassword] = useState("");
+
+      // p = signInWithEmailAndPassword(auth, email, password);
     }
 
     if (signInMethod === "google.com") {
@@ -75,4 +78,4 @@ export function useSignIn(
   return [signIn, inFlight] as const;
 }
 
-export type SignInMethod = "google.com" | "anonymous";
+export type SignInMethod = "google.com" | "email";

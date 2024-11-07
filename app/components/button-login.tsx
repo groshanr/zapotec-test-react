@@ -12,7 +12,7 @@ export function LoginButton(props: LoginButtonProps): JSX.Element {
   const icon =
     signInMethod === "google.com" ? (
       <GoogleIcon />
-    ) : signInMethod === "anonymous" ? (
+    ) : signInMethod === "email" ? (
       <AnonymousIcon />
     ) : null;
 
@@ -25,9 +25,9 @@ export function LoginButton(props: LoginButtonProps): JSX.Element {
       children={
         signInMethod === "google.com"
           ? "Continue via Google"
-          : signInMethod === "anonymous"
-            ? "Continue as anonymous"
-            : "unknown"
+          : signInMethod === "email"
+            ? "Continue via email"
+            : "Continue via email"
       }
       {...other}
     />

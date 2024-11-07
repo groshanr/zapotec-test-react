@@ -1,13 +1,14 @@
 /* SPDX-FileCopyrightText: 2014-present Kriasoft */
 /* SPDX-License-Identifier: MIT */
 
-import { ExpandMoreRounded, NotificationsRounded } from "@mui/icons-material";
+import { NotificationsRounded } from "@mui/icons-material";
 import { Box, BoxProps, Button, IconButton } from "@mui/joy";
 import { Fragment, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { useCurrentUser } from "../core/auth";
 import { ColorSchemeButton } from "./button-color-scheme";
 import { UserAvatarButton } from "./button-user-avatar";
+import { Navigation } from "./navigation";
 
 export function Toolbar(props: ToolbarProps): JSX.Element {
   const { sx, ...other } = props;
@@ -26,13 +27,7 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
       component="header"
       {...other}
     >
-      <Button
-        color="neutral"
-        variant="plain"
-        endDecorator={<ExpandMoreRounded />}
-        children="Project Name"
-      />
-
+      <Navigation></Navigation>
       <Box sx={{ flexGrow: 1 }} component="span" />
 
       <Suspense>

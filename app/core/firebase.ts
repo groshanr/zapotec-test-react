@@ -4,6 +4,8 @@
 import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 export const app = initializeApp({
   projectId: import.meta.env.VITE_GOOGLE_CLOUD_PROJECT,
@@ -15,3 +17,5 @@ export const app = initializeApp({
 
 export const auth = getAuth(app);
 export const analytics = getAnalytics(app);
+export const storage = getStorage(app);
+export const db = getFirestore(app);

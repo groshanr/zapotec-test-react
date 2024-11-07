@@ -4,13 +4,13 @@
 import { Container, Typography } from "@mui/joy";
 import { usePageEffect } from "../core/page";
 
-export const Component = function Tasks(): JSX.Element {
-  usePageEffect({ title: "Tasks" });
+export const Component = function Contact(): JSX.Element {
+  usePageEffect({ title: "Contact" });
 
   return (
     <Container sx={{ py: 2 }}>
       <Typography level="h2" gutterBottom>
-        Tasks
+        Contact
       </Typography>
       <Typography>Coming soon...</Typography>
     </Container>

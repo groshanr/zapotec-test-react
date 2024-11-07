@@ -1,9 +1,9 @@
 /* SPDX-FileCopyrightText: 2014-present Kriasoft */
 /* SPDX-License-Identifier: MIT */
 
+import assetManifest from "__STATIC_CONTENT_MANIFEST";
 import { serveStatic } from "hono/cloudflare-workers";
 import { getMimeType } from "hono/utils/mime";
-import assetManifest from "__STATIC_CONTENT_MANIFEST";
 import { app } from "../core/app.js";
 
 const manifest = JSON.parse(assetManifest);
@@ -22,7 +22,10 @@ export const handler = app.use("*", async (ctx, next) => {
   const isKnownRoute = [
     "",
     "/",
-    "/dashboard",
+    "home",
+    "contact",
+    "about",
+    "resources",
     "/settings",
     "/settings/account",
     "/login",

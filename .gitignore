@@ -30,6 +30,7 @@ yarn-error.log*
 # Environment variables
 .env.*.local
 .env.local
+.env
 
 # Visual Studio Code
 # https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
@@ -46,3 +47,8 @@ yarn-error.log*
 # macOS
 # https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
 .DS_Store
+yarn.lock
+.github
+.yarn
+.vscode
+.env
